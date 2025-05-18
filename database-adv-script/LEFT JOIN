@@ -1,0 +1,4 @@
+-- Get all properties and their reviews, include properties with no reviews
+SELECT p.*, r.*
+FROM properties p
+LEFT JOIN reviews r ON p.id = r.property_id;

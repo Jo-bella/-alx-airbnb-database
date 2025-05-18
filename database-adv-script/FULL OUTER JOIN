@@ -1,0 +1,4 @@
+-- Get all users and bookings, including unmatched ones
+SELECT u.*, b.*
+FROM users u
+FULL OUTER JOIN bookings b ON u.id = b.user_id;

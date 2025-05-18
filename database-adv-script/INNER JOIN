@@ -1,0 +1,4 @@
+-- Get all bookings with the respective user who made them
+SELECT b.*, u.*
+FROM bookings b
+INNER JOIN users u ON b.user_id = u.id;

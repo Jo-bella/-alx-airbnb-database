@@ -1,8 +1,11 @@
--- Simulate full outer join in MySQL
-SELECT u.*, b.*
-FROM users u
-LEFT JOIN bookings b ON u.id = b.user_id
-UNION
-SELECT u.*, b.*
-FROM users u
-RIGHT JOIN bookings b ON u.id = b.user_id;
+SELECT bookings.*, users.*
+FROM bookings
+INNER JOIN users ON bookings.user_id = users.id;
+
+SELECT properties.*, reviews.*
+FROM properties
+LEFT JOIN reviews ON properties.id = reviews.property_id;
+
+SELECT users.*, bookings.*
+FROM users
+FULL OUTER JOIN bookings ON users.id = bookings.user_id;
